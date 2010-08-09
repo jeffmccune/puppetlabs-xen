@@ -5,6 +5,9 @@
 #   Virtual machines existing on the domain 0 will be modeled
 #   as a puppet defined resource type.
 #
+#   The defined resource type must accept the hostname parameter for the
+#   custom function to work properly.
+#
 #   Jeff McCune <jeff@puppetlabs.com>
 #   2010-08-09
 #
@@ -18,10 +21,10 @@
 #
 class xen {
   $module = "xen"
-  notify { "FIXME: ${module} unimplemented": }
 # This defined resource type is in the class so the function
 # can look it up correctly.
   define vmachine($vm_mac=false,
+    $hostname=false,
     $vm_name=false,
     $vm_disk=false,
     $vm_disk_source="/dev/VolGroup00/tomcat0",
