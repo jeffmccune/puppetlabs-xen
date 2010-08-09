@@ -33,7 +33,7 @@ class xen {
     $vm_memory="512") {
 
   # Selections
-    $module = "puppetlabs-tomcat"
+    $module = "xen"
     $vm_name_real = $vm_name ? {
       false   => $name,
       default => $vm_name }
